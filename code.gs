@@ -1,3 +1,4 @@
+
 const AUTHOR_ID = "497d1667-d0e0-4748-9dcf-612d74a282ea"
 const SCRIPT_NAME = "quest poison";
 const HEADERS = {
@@ -114,9 +115,9 @@ function scoreHabit(id) {
   }
 
 function cronTasks(){
-  var randomElemenet = Math.random()*100;
-    Logger.log("rand num: " + randomElemenet); 
-  if (randomElemenet < 25) {
+  var randomElement = Math.random()*100;
+    Logger.log("rand num: " + randomElement); 
+  if (randomElement < 25) {
    // do nothing got lucky
     scoreHabit(questPoisonHabit.alias);
   } else if(randomElement < 50 ) {
@@ -133,8 +134,8 @@ function cronTasks(){
 ``
     let numOfOverdue = overDueTodos();
     Logger.log("numOfOverdue: " + numOfOverdue);
-    if(numOfOverdue > 0){
+    for(let i = 0; i < numOfOverdue; i++){
       scoreHabit(lateTaskHabit.alias);
-
     }
+   
 }
